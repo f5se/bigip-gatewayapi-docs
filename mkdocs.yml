@@ -1,4 +1,4 @@
-site_name: BIG-IP k8s Gateway API online docs
+site_name: BIG-IP k8s Gateway online docs
 extra_css:
   - stylesheets/extra.css
 

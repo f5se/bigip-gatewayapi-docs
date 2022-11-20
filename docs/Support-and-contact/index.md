@@ -1,7 +1,11 @@
-# 支持与联系
+# Support and contact
 
-您可以通过以下方式获得技术支持与服务：
 
-* 以Github [Issues](https://github.com/f5se/cis-c-docs/issues)方式在社区内提交，这是优先建议的方式。
-  
-* 在标准工作时间内（9AM-18PM 北京时区)拨打F5技术支持热线。如您的BIG-IP具有7*24服务，在非工作时间内您可以紧急联系对应技术支持工程师。
+
+Currently please raise your questions or issues by [github Issues
+
+Welcome ontact us by below ways:
+
+* Slack channel (forl global users)
+* Wechat group (for China Wechat users only)
+
