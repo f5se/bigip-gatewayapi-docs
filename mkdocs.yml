@@ -1,0 +1,129 @@
+site_name: BIG-IP k8s Gateway API online docs
+extra_css:
+  - stylesheets/extra.css
+
+theme:
+  name: material
+  custom_dir: overrides
+  highlightjs: true
+  language: en
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - toc.follow
+    - navigation.tracking
+    - content.code.annotate
+    - content.tooltips
+    - search.highlight
+    - search.share
+    - search.suggest
+    - announce.dismiss
+
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - fenced_code
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+nav:
+  - Overview: index.md
+  - Releases: Release-notes/index.md
+  - Getting Started:
+    - Prerequisites: quick-start/index.md
+    - Installing guide: quick-start/installation.md
+    - Unstalling guide: quick-start/uninstall.md
+  - Product Architecture:
+    - Overview: Architecture/index.md
+    - Controller parameters: Architecture/parameters.md
+    - GatewayClass parametersRef: Architecture/gatewayclassrefer.md
+  - Use Cases:
+    - Simple HTTProute: Use-Cases/http.md
+    - Advanced HTTProute: Use-Cases/https.md
+    - Cross Reference: Use-Cases/tcp.md
+  - : Operations:
+    - Common FAQ: Operation-and-troubleshooting/ki.md
+    - Troubleshooting: Operation-and-troubleshooting/trubeshooting.md
+  - Contact Us: 
+    - Tech Support: Support-and-contact/index.md
+    - Contributions: Support-and-contact/doc-revise.md
+
+plugins:
+  - search:
+      separator: '[\s\u200b\-]'
+  - git-revision-date-localized:
+      type: datetime
+      timezone: Asia/Shanghai
+      enable_creation_date: true
+      locale: en
+      fallback_to_build_date: true
+  - minify:
+      minify_html: true
+      htmlmin_opts:
+        remove_comments: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/f5se/bigip-gatewayapi-docs/
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/f5devcentral/bigip-gatewayapi/tags
+
+
+# Repository
+repo_name: f5se/bigip-gatewayapi-docs
+repo_url: https://github.com/f5se/bigip-gatewayapi-docs
+
+# Copyright
+copyright: Copyright &copy; 2022 F5
