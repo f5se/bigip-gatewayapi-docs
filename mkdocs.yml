@@ -89,15 +89,15 @@ nav:
     - Controller parameters: Architecture/parameters.md
     - GatewayClass parametersRef: Architecture/gatewayclassrefer.md
   - Use Cases:
-    - Simple HTTProute: Use-Cases/http.md
-    - Advanced HTTProute: Use-Cases/https.md
-    - Cross Reference: Use-Cases/tcp.md
+    - Simple HTTProute: Use-Cases/simplehttp.md
+    - Advanced HTTProute: Use-Cases/advancedhttp.md
+    - Cross Reference: Use-Cases/crossrefer.md
   - Operations:
     - Common FAQ: Operation-and-troubleshooting/ki.md
     - Troubleshooting: Operation-and-troubleshooting/trubeshooting.md
   - Contact Us: 
     - Tech Support: Support-and-contact/index.md
-    - Contributions: Support-and-contact/doc-revise.md
+    - Contributions: Support-and-contact/contributions.md
 
 plugins:
   - search:
