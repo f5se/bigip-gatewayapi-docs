@@ -87,8 +87,9 @@ nav:
   - Product Architecture:
     - Overview: Architecture/index.md
     - Controller parameters: Architecture/parameters.md
-    - GatewayClass parametersRef: Architecture/gatewayclassrefer.md
+    - GatewayClass and BIG-IP References: Architecture/gatewayclassrefer.md
   - Use Cases:
+    - BIG-IP Provider Setup: Use-Cases/bigip-setup.md
     - Simple HTTProute: Use-Cases/simplehttp.md
     - Advanced HTTProute: Use-Cases/advancedhttp.md
     - Cross Reference: Use-Cases/crossrefer.md
