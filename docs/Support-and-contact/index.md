@@ -17,11 +17,10 @@
 ### Welcome contact us by below ways:
 
 * Slack channel (for global users)
-  * Join the [f5CloudSolutions Slack workspace](https://f5cloudsolutions.herokuapp.com/) first
-  * After join in the workspace, login into the workspace, find channel #oss-bigip-kubernetes-gateway
-  * That's all
+    * Join the [f5CloudSolutions Slack workspace](https://f5cloudsolutions.herokuapp.com/) first
+    * After join in the workspace, login into the workspace, find channel #oss-bigip-kubernetes-gateway
+    * That's all
 
 * Wechat group (for China Wechat users only)
-  * QR code will be here soon
-
+    * QR code will be here soon
 
