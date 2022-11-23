@@ -1,6 +1,6 @@
 # Gateway Resources Management
 
-GatewayClass Gateway HTTPRoute Service 四种资源相互关联，形成树状关联关系，其中GatewayClass为根。与BIG-IP上各个资源的类比关系如下图所示：
+The four resources of GatewayClass Gateway HTTPRoute Service are related to each other to form a tree-like association, of which GatewayClass is the root. The following figure shows the analogy relationship with each resource on the BIG-IP:
 
 ![image](./gatewayclass-bigip.png)
 
