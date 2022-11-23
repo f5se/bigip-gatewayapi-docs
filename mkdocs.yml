@@ -88,6 +88,7 @@ nav:
     - Overview: Architecture/index.md
     - Controller parameters: Architecture/parameters.md
     - GatewayClass and BIG-IP References: Architecture/gatewayclassrefer.md
+    - Gateway Resource Management: Architecture/resources-layout.md
   - Use Cases:
     - BIG-IP Provider Setup: Use-Cases/bigip-setup.md
     - Simple HTTProute: Use-Cases/simplehttp.md
