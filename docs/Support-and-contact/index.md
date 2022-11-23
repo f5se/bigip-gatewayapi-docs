@@ -16,6 +16,6 @@
 
 ### Welcome contact us by below ways:
 
-* Slack channel (forl global users)
+* Slack channel (for global users)
 * Wechat group (for China Wechat users only)
 
