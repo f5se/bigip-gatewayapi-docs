@@ -3,7 +3,7 @@
 In the repository, we provide the corresponding Gateway API deployment configuration file, which can be used in the deployment process of the BIGIP-Kubernetes-Gateway controller in general.
 
 The directory where the deployment files are located is: 
-https://github.com/F5Networks/bigip-kubernetes-gateway/tree/master/deploy
+[https://github.com/f5devcentral/bigip-kubernetes-gateway/tree/master/deploy](https://github.com/f5devcentral/bigip-kubernetes-gateway/tree/master/deploy){:target="_blank"}
 
 The files are numbered and can complete the deployment process in order, where:
 

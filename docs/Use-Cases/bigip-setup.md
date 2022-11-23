@@ -2,7 +2,7 @@
 
 After the bigip-kubernetes-gateway controller is deployed, the first step is to create a gatewayclass resource.
 
-A gatewayclass resource corresponds to a BIG-IP. According to the definition of gatewayclass by [SIGNetworks](https://gateway-api.sigs.k8s.io/), we know that gatewayclass marks the implementation carrier of gateway-related resources, and in the bigip-kubernetes-gateway senarios, the carrier corresponding to the gatewayclass is BIG-IP.
+A gatewayclass resource corresponds to a BIG-IP. According to the definition of gatewayclass by [SIGNetworks](https://gateway-api.sigs.k8s.io/){:target="_blank"}, we know that gatewayclass marks the implementation carrier of gateway-related resources, and in the bigip-kubernetes-gateway senarios, the carrier corresponding to the gatewayclass is BIG-IP.
 
 gatewayclass.yaml: 
 ```yaml

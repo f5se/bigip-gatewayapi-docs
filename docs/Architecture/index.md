@@ -1,8 +1,8 @@
 # Overview
 
-This project aims to follow the Kubernetes [Operator pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)
+This project aims to follow the Kubernetes [Operator pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){:target="_blank"}
 
-It uses [Controllers](https://kubernetes.io/docs/concepts/architecture/controller/) 
+It uses [Controllers](https://kubernetes.io/docs/concepts/architecture/controller/){:target="_blank"} 
 which provides a reconcile function responsible for synchronizing resources untile the desired state is reached on the cluster 
 
 ### Framework and Workflow Design

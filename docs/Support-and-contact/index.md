@@ -4,20 +4,20 @@
 
 ### For the gateway controller support:
 
-* Currently please raise your questions or issues by [github Issues](https://github.com/F5Networks/bigip-kubernetes-gateway/issues)
+* Currently please raise your questions or issues by [github Issues](https://github.com/F5Networks/bigip-kubernetes-gateway/issues){:target="_blank"}
 
 
 
 ### For the online docs support:
 
-* Currently please raise your questions or issues by [github Issues](https://github.com/f5se/bigip-gatewayapi-docs/issues)
+* Currently please raise your questions or issues by [github Issues](https://github.com/f5se/bigip-gatewayapi-docs/issues){:target="_blank"}
 
 
 
 ### Welcome contact us by below ways:
 
 * Slack channel (for global users)
-    * Join the [f5CloudSolutions Slack workspace](https://f5cloudsolutions.herokuapp.com/) first
+    * Join the [f5CloudSolutions Slack workspace](https://f5cloudsolutions.herokuapp.com/){:target="_blank"} first
     * After join in the workspace, login into the workspace, find channel #oss-bigip-kubernetes-gateway
     * That's all
 
