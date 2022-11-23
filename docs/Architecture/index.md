@@ -23,8 +23,13 @@ From the above figure, we can see the correspondence between gateway-related res
 
 | K8S Resources      | BIG-IP Resources |
 | ----------- | ----------- |
-| GatewayClass      | BIG-IP Device + Partition       |
+|Controller | BIG-IP Device |
+| GatewayClass      |  Partition       |
 | Gateway   | Virtual        |
 |HTTPRoute| iRule|
 |Service|Pool|
 |Deploy(pods)|Member|
+
+The association of resources can be compared to a tree:
+
+![image](./resources-layout-like-a-tree.png)
