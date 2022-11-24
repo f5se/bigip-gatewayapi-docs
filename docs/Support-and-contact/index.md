@@ -4,7 +4,7 @@
 
 ### For the gateway controller support:
 
-* Currently please raise your questions or issues by [github Issues](https://github.com/F5Networks/bigip-kubernetes-gateway/issues){:target="_blank"}
+* Currently please raise your questions or issues by [github Issues](https://github.com/f5devcentral/bigip-kubernetes-gateway/issues){:target="_blank"}
 
 
 
