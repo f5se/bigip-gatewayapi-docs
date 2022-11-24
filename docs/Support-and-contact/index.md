@@ -22,5 +22,8 @@
     * That's all, start your conversation.
 
 * Wechat group (for China Wechat users only)
-    * QR code will be here soon.
+
+    * zongzw 
+    
+      <img src=./wechat-qr-zongzw.png width=30% align="center"/>
 
