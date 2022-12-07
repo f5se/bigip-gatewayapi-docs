@@ -41,3 +41,5 @@ deploy/3.deploy-bigip-k8s-gtw-ctlr.yaml
 As shown above, you can see that we currently pass in the connection url, username and password of BIG-IP through parameters. In the future, this method will change after the implementation of the gatewayclass.
 
 For details about the usage of the file, See [installation](../quick-start/installation.md)
+
+The controller startup configuration can also be passed in through configmap, and the specific usage method is still under development.
