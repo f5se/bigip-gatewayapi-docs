@@ -1,6 +1,8 @@
 # Releases 
 
-The bigip-kubernetes-gateway versions are released on dockerhub as a Docker image. The repository is https://github.com/f5devcentral/bigip-kubernetes-gateway.
+The bigip-kubernetes-gateway versions are released on dockerhub as [Docker images](https://hub.docker.com/r/f5devcentral/bigip-kubernetes-gateway/tags). 
+
+The code repository is [f5devcentral/bigip-kubernetes-gateway](https://github.com/f5devcentral/bigip-kubernetes-gateway).
 
 ## Release v0.0.1
 
