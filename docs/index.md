@@ -1,5 +1,9 @@
 # F5 BIG-IP kubernetes Gateway online docs
 
+[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/f5devcentral/bigip-kubernetes-gateway)  [![Docker pull](https://img.shields.io/docker/pulls/f5devcentral/bigip-kubernetes-gateway)](https://hub.docker.com/r/f5devcentral/bigip-kubernetes-gateway) [![Issues](https://img.shields.io/github/issues/f5devcentral/bigip-kubernetes-gateway)](https://github.com/f5devcentral/bigip-kubernetes-gateway/issues) [![Stars](https://img.shields.io/github/stars/f5devcentral/bigip-kubernetes-gateway)]() [![Go](https://goreportcard.com/badge/github.com/f5devcentral/bigip-kubernetes-gateway)](https://goreportcard.com/report/github.com/f5devcentral/bigip-kubernetes-gateway) [![License](https://img.shields.io/github/license/f5devcentral/bigip-kubernetes-gateway)](./LICENSE)
+
+
+
 Welcome.
 
 This is the online docs of F5 BIG-IP kubernetes Gateway.
