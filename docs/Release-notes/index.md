@@ -4,6 +4,27 @@ The bigip-kubernetes-gateway versions are released on dockerhub as [Docker image
 
 The code repository is [f5devcentral/bigip-kubernetes-gateway](https://github.com/f5devcentral/bigip-kubernetes-gateway).
 
+
+## Release v0.0.2
+
+### Docker Image: 
+
+[f5devcentral/bigip-kubernetes-gateway:v0.0.2-20221129](https://hub.docker.com/r/f5devcentral/bigip-kubernetes-gateway/tags)
+
+### Reference: 
+
+https://gateway-api.f5se.io/quick-start/installation/
+
+### Release Notes:
+
+* Add support for gatewayclass resources, see [gatewayclass design](https://gateway-api.f5se.io/Architecture/#framework-and-workflow-design).
+* Implement the ability of handling disorder events for kinds of resources.
+* Improve the design and usage documentation: https://gateway-api.f5se.io/
+* Optimize the resource synchronization mode at startup time for deployment integrity.
+* Update the [f5-bigip-rest](https://gitee.com/zongzw/f5-bigip-rest) dependency for better deployments.
+
+**Full Changelog**: https://github.com/f5devcentral/bigip-kubernetes-gateway/compare/v0.0.1...v0.0.2
+
 ## Release v0.0.1
 
 ### Docker Image: 
