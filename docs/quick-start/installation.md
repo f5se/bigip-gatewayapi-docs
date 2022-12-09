@@ -9,15 +9,13 @@ The files are numbered and can complete the deployment process in order, where:
 
 |file name | functionality | notes |
 | --- | --- | -- |
-| 0.bigip-config.yaml | BIG-IP connecting info | Required inputs by user |
 | 1.clusterrole-and-binding.yaml | Create a user and role with corresponding operation permissions in the k8S cluster | No further input is required |
 | 2.install-bigip-k8s-gtw-crds.yaml | Install the gateway API CRD and admission deployment | No further input is required |
-| 3.deploy-bigip-k8s-gtw-ctlr.yaml | Deploy bigip-kubernetes-gateway controller | Required inputs by user to change `image: ` |
+| 3.deploy-bigip-k8s-gtw-ctlr.yaml | Deploy bigip-kubernetes-gateway controller | Required inputs by user to change BIGIP `password: `, BIGIP Configurations in `bigips: ` and image version in `image: ` |
 
 Each of the above files can be completed by executing the `kubectl` command separately in order:
 
 ```shell
-$ kubectl apply -f 0.bigip-config.yaml
 $ kubectl apply -f 1.clusterrole-and-binding.yaml
 $ kubectl apply -f 2.install-bigip-k8s-gtw-crds.yaml
 $ kubectl apply -f 3.deploy-bigip-k8s-gtw-ctlr.yaml
