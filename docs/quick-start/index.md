@@ -4,3 +4,133 @@ You’ll need a Kubernetes cluster to run against. You can use [KIND](https://si
 
 **Note:** bigip-kubernetes-gateway controller will automatically use the current context in your kubeconfig file (i.e. whatever cluster `kubectl cluster-info` shows). If the controller runs in In-Cluster mode, it will depends on the serviceaccount and role/role-binding described in [installation](./installation.md).
 
+## Kubernetes Setup
+
+After you have a K8s cluster, we need to configure it for different CNI types to make sure connection between BIG-IP and kubernetes cluster is OK.
+
+**Note:** 
+
+*We need to configure both sides of BIG-IPs and the Kubernetes cluster.*
+
+*While, The BIG-IP side is configured by controller itself automatically.*
+
+*Here, we only need to configure Kubernetes side manually.*
+
+### In Flannel mode
+
+We need to create a BIG-IP virtual node to connect the BIG-IP node to your Kubernetes cluster flannel network.
+
+Use the following yaml configuration file bigip1.yaml:
+
+bigip1.yaml:
+```yaml
+apiVersion: v1
+kind: Node
+metadata:
+name: bigip1
+annotations:
+    # Replace IP with Self-IP for your deployment
+    flannel.alpha.coreos.com/public-ip: "10.250.18.105"
+    # uncomment the following line if using v6 tunnel and modify bigip v6 address
+    # flannel.alpha.coreos.com/public-ipv6: "2021:15::125"
+    # Replace MAC with your BIGIP Flannel VXLAN Tunnel MAC
+    flannel.alpha.coreos.com/backend-data: '{"VtepMAC":"fa:16:3e:d5:28:07"}'
+    # uncomment the following line if using v6 tunnel and modify mac accordingly
+    # flannel.alpha.coreos.com/backend-v6-data: '{"VtepMAC":"fa:16:3e:d5:28:07"}'
+    flannel.alpha.coreos.com/backend-type: "vxlan"
+    flannel.alpha.coreos.com/kube-subnet-manager: "true"
+spec:
+# Replace Subnet with your BIGIP Flannel Subnet
+podCIDR: "10.42.20.0/24"
+# uncomment the following 3 lines if using v6 tunnel and modify CIDRs using real data
+#podCIDRs:
+#- "10.42.20.0/24"
+#- "2021:118:2:2::/64"
+```
+
+The mac address can be obtained using the tmsh command on BIG-IP:
+
+`$ show net tunnels tunnel fl-tunnel all-properties`
+
+`$ show net tunnels tunnel fl-tunnel6 all-properties`
+
+Put the above into the bigip1.yaml file and execute the file contents using the `kubectl apply -f bigip1.yaml` command.
+
+### In Calico mode
+
+On Kubernetes master node, run the command to get `calicoctl` command line:
+
+```shell
+$ curl -O -L https://github.com/projectcalico/calicoctl/releases/download/v3.10.0/calicoctl`
+$ chmod +x calicoctl
+$ sudo mv calicoctl /usr/local/bin
+```
+
+Edit `/etc/calico/calico.ctl.cfg` file
+
+```shell
+$ sudo mkdir /etc/calico
+$ vim /etc/calico/calicoctl.cfg
+```
+
+calicoctl.cfg
+
+```yaml
+apiVersion: projectcalico.org/v3
+kind: CalicoAPIConfig
+metadata:
+spec:
+  datastoreType: "kubernetes"
+  kubeconfig: "/root/.kube/config"    # change to actual kubeconfig path
+```
+
+Run `calicoctl get nodes` to verify calicoctl runtime works OK.
+
+Run the following command to create BGP Group:
+
+```shell
+
+cat << EOF | calicoctl create -f -
+apiVersion: projectcalico.org/v3
+kind: BGPConfiguration
+metadata:
+  name: default
+spec:
+  logSeverityScreen: Info
+  nodeToNodeMeshEnabled: true
+  asNumber: 64512
+EOF
+```
+
+Run the following command to create BIG-IP peer for your kubernetes cluster.
+
+**Notes**: *Change the peerIP to actual BIG-IP traffic IP(the selfIP for data traffic).*
+
+```shell
+cat << EOF | calicoctl create -f -
+apiVersion: projectcalico.org/v3
+kind: BGPPeer
+metadata:
+    name: bgppeer-bigip1
+spec:
+  peerIP: 192.2.3.4
+  asNumber: 64512
+EOF
+```
+
+After the configuration, we can use `calicoctl node status` command to check the BIG-IP peer status:
+
+```shell
+# calicoctl node status
+Calico process is running.
+
+IPv4 BGP status
++---------------+-------------------+-------+----------+-------------+
+| PEER ADDRESS  |     PEER TYPE     | STATE |  SINCE   |    INFO     |
++---------------+-------------------+-------+----------+-------------+
+| 10.250.17.182 | node-to-node mesh | up    | 03:07:33 | Established |
+| 10.250.17.111 | global            | up    | 06:18:28 | Established |
++---------------+-------------------+-------+----------+-------------+
+```
+
+More references, see https://f5-k8s-istio-lab.readthedocs.io/en/latest/BGP/introduction.html
