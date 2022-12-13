@@ -6,6 +6,6 @@ You can refer to the deployment file described in the [installation](./installat
 
 ```shell
 $ kubectl delete -f 3.deploy-bigip-kubernetes-gateway-controller.yaml
-$ kubectl delete -f 2.install-bigip-kubernetes-gatewayapi-CRDs.yaml
+$ kubectl delete -f 2.install-kubernetes-gatewayapi-CRDs.yaml
 $ kubectl delete -f 1.clusterrole-and-binding.yaml
 ```
