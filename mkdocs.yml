@@ -90,8 +90,8 @@ nav:
     - GatewayClass and BIG-IP References: Architecture/gatewayclassrefer.md
     - Gateway Resource Management: Architecture/resources-layout.md
   - Use Cases:
-    - BIG-IP Provider Setup: Use-Cases/bigip-setup.md
     - Simple HTTProute: Use-Cases/simplehttp.md
+    - Traffic Splitting: Use-Cases/traffic-splitting.md
     - Advanced HTTProute: Use-Cases/advancedhttp.md
     - Cross Reference: Use-Cases/crossrefer.md
   - Operations:
