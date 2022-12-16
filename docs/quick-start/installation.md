@@ -16,7 +16,7 @@ Execute the `kubectl` command separately in order:
 
 ```shell
 $ kubectl apply -f 1.clusterrole-and-binding.yaml
-$ kubectl apply -f 2.install-bigip-kubernetes-gatewayapi-CRDs.yaml
+$ kubectl apply -f 2.install-kubernetes-gatewayapi-CRDs.yaml
 $ kubectl apply -f 3.deploy-bigip-kubernetes-gateway-controller.yaml
 ```
 
@@ -25,3 +25,5 @@ After doing them, the bigip-kubernetes-gateway controller runs as a pod in `kube
 
 * View deployment results via `kubectl get deployment -n kube-system`.
 * View the run log via `kubectl logs -f deployment/bigip-kubernetes-gateway -c bigip-kubernetes-gateway-pod -n kube-system`
+
+For configuration defails in mentioned yaml files, see [Controller Parameters](./parameters.md).
