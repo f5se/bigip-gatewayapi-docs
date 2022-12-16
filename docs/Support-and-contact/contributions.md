@@ -12,7 +12,7 @@ Here are the contributors for now：
 - [**Niklaus-xie**](https://github.com/Niklaus-xie){:target="_blank"}
 - [**myf5** Jing Lin](https://github.com/myf5){:target="_blank"}
 
-### License
+## License
 
 Copyright 2022.
 

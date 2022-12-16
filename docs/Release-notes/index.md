@@ -18,9 +18,9 @@ https://gateway-api.f5se.io/quick-start/installation/
 ### Release Notes:
 
 * Documentation on https://gateway-api.f5se.io/, including:
-  + Update usage of [deploy/install controller](../quick-start/installation.md)
-  + Add gateway api compatibility [reference](https://github.com/f5devcentral/bigip-kubernetes-gateway/blob/master/docs/gateway-api-compatibility.md){:target="_blank"}
-  + Add [LICENSE](https://github.com/f5devcentral/bigip-kubernetes-gateway/commit/af0b432c9c634adeb116165bf4e3aedc1555c370){:target="_blank"} declaration
+  * Update usage of [deploy/install controller](../quick-start/installation.md)
+  * Add gateway api compatibility [reference](https://github.com/f5devcentral/bigip-kubernetes-gateway/blob/master/docs/gateway-api-compatibility.md){:target="_blank"}
+  * Add [LICENSE](https://github.com/f5devcentral/bigip-kubernetes-gateway/commit/af0b432c9c634adeb116165bf4e3aedc1555c370){:target="_blank"} declaration
 * Use github action for the [integration](https://github.com/f5devcentral/bigip-kubernetes-gateway/blob/master/.github/workflows/release-slack-notice.yml){:target="_blank"} with Slack.
 * Redesign gatewayclass and controller [relationship](https://gateway-api.f5se.io/Architecture/gatewayclassrefer/){:target="_blank"} that moves BIG-IP configuration to controller level.
 * Add controller parameter form of [configmap](https://github.com/f5devcentral/bigip-kubernetes-gateway/commit/cbff23770abed5dec7a6c63eaa98a01f19fce64f){:target="_blank"}.
@@ -48,7 +48,7 @@ https://gateway-api.f5se.io/quick-start/installation/
 * Optimize the resource synchronization mode at startup time for deployment integrity.
 * Update the [f5-bigip-rest](https://gitee.com/zongzw/f5-bigip-rest){:target="_blank"} dependency for better deployments.
 
-**Full Changelog**: https://github.com/f5devcentral/bigip-kubernetes-gateway/compare/v0.0.1...v0.0.2{:target="_blank"}
+**Full Changelog**: https://github.com/f5devcentral/bigip-kubernetes-gateway/compare/v0.0.1...v0.0.2  
 
 ## Release v0.0.1
 

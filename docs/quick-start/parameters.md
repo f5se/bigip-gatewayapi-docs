@@ -1,6 +1,6 @@
 # Parameters
 
-Examples of the usecase of parameters are available in the deployment file:
+The examples of the parameters are available in the deployment yaml file placed on the code repository:
 
 [deploy/3.deploy-bigip-kubernetes-gateway-controller.yaml](https://github.com/f5devcentral/bigip-kubernetes-gateway/blob/master/deploy/3.deploy-bigip-kubernetes-gateway-controller.yaml){:target="_blank"}.
 
@@ -9,9 +9,9 @@ There are 2 parts of BIG-IP configurations:
 * The password of BIG-IP passed in via a Kubernetes Secret(Part 1).
 * Some additional BIG-IP configuration information passed in via a separate Kubernetes Configmap(Part 2).
 
-In the controller deployment yaml, the two parts of the parameters are passed in the form of volume, and the controller reads the specific configuration content of indicated paths.
+In the controller deployment yaml file(Part 3), the two parts of configurations are passed in the form of volume, and the controller reads the specific configuration content of the indicated paths.
 
-### Part 1: bigip-login
+## Part 1: bigip-login
 
 ```yaml
 ---
@@ -27,9 +27,9 @@ type: Opaque
 
 ```
 
-BIG-IP's `password` for admin is stored in a separate `Secret` type resource for secure consideration.
+BIG-IP's `password` for admin is stored in a separate `Secret` type resource for security concern.
 
-### Part 2: bigip-kubernetes-gateway-configmap
+## Part 2: bigip-kubernetes-gateway-configmap
 
 ```yaml
 ---
@@ -40,16 +40,23 @@ metadata:
   name: bigip-kubernetes-gateway-configmap
   namespace: kube-system
 data:
-  bigip-kubernetes-gateway-config.yaml: |      # configuration for BIG-IP setup
-    bigips:
-      - mgmtIpAddress: "10.250.17.104"
-        vxlanProfileName: "fl-vxlan"
-        vxlanPort: "8472"
-        vxlanLocalAddress: "10.250.18.120"
-        selfIpName: "flannel-self"
-        selfIpAddress: "10.42.20.1/16"
-        url: "https://10.250.17.104:8443"
-        username: "admin"
+  bigip-kubernetes-gateway-config: |
+    - management:
+        username: admin
+        ipAddress: 10.250.15.180
+        Management IP for connection.
+        port: 443
+      flannel:
+        tunnels:
+          - name: fl-tunnel
+            profileName: fl-vxlan
+            port: 8472
+            localAddress: 10.250.18.119
+        selfIPs:
+          - name: flannel-self
+            ipMask: 10.42.20.1/16
+            tunnelName: fl-tunnel
+      calico:
 
 
 ```
@@ -60,39 +67,43 @@ The controller would configure the BIG-IPs as specified to make sure the data pl
 
 The meaning of fields are:
 
-* **mgmtIpAddress**: "10.250.17.104"
+```yaml
 
-  Management IP for connection.
+      # BIG-IP management info
+    - management:
+        # username, must be amdin currently
+        username: admin
+        # management IP address for iControl Rest
+        ipAddress: 10.250.15.180
+        # optional, management port, default to 443
+        port: 443
 
-* **vxlanProfileName**: "fl-vxlan"
+      # optional, overlay network configuration for flannel CNI mode
+      flannel:
+        # tunnels configuration
+        tunnels:
+            # tunnel name
+          - name: fl-tunnel
+            # tunnel profile name for binding to the very tunnel
+            profileName: fl-vxlan
+            # tunnel profile port for binding to the very tunnel
+            port: 8472
+            # the local address for the tunnel(VTEP)
+            localAddress: 10.250.18.119
+        # selfips configuration
+        selfIPs:
+            # the name of the self IP address definition
+          - name: flannel-self
+            # the IP address associated to the vxlan tunnel
+            ipMask: 10.42.20.1/16
+            # tunnel name, should match one of the tunnels
+            tunnelName: fl-tunnel
 
-  Tunnel profile for binding to the very tunnel in flannel CNI mode.
+      # optional, underlay network configuration for calico CNI mode
+      calico:
+```
 
-* **vxlanPort**: "8472"
-
-  Tunnel profile port for binding to the very tunnel in flannel CNI mode.
-
-* **vxlanLocalAddress**: "10.250.18.120"
-
-  The local address for the tunnel(VTEP) in flannel CNI mode.
-
-* **selfIpName**: "flannel-self"
-
-  The name of the self IP address definition.
-
-* **selfIpAddress**: "10.42.20.1/16"
-
-  The IP address associated to the vxlan tunnel.
-
-* **url**: "https://10.250.17.104:8443"
-
-  URL for BIG-IP connection and management.
-
-* **username**: "admin"
-
-  username for management, must be "admin" for now.
-
-### Part 3: bigip-kubernetes-gateway deployment and service
+## Part 3: bigip-kubernetes-gateway deployment and service
 
 ```yaml
 
@@ -116,13 +127,11 @@ spec:
       containers:
         # use `kubectl logs -f deployment/bigip-kubernetes-gateway -c bigip-kubernetes-gateway-pod -n kube-system` for tracing.
         - name: bigip-kubernetes-gateway-pod
-          image: jeffreycoho/bigip-kubernetes-gateway:12060066-20221206-153736
+          image: f5devcentral/bigip-kubernetes-gateway:v0.0.4 # > 0.0.4
           imagePullPolicy: IfNotPresent
           command: ["/bigip-kubernetes-gateway-controller-linux"]
           args: [
             "--controller-name=f5.io/gateway-controller-name",
-            "--mode=flannel",
-            "--vxlan-tunnel-name=fl-vxlan",
             "--bigip-config-directory=/bigip-config",
             "--bigip-credential-directory=/bigip-credential",
           ]
@@ -142,5 +151,6 @@ spec:
             name: bigip-kubernetes-gateway-configmap
 
 ```
+The the above yaml file, let's pay attention to `image`, `args`, `volumeMounts` and `volumes` parts.
 
 For details about the usage of the file, See [installation](../quick-start/installation.md).

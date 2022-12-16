@@ -4,21 +4,19 @@ You’ll need a Kubernetes cluster to run against. You can use [KIND](https://si
 
 **Note:** bigip-kubernetes-gateway controller will automatically use the current context in your kubeconfig file (i.e. whatever cluster `kubectl cluster-info` shows). If the controller runs in In-Cluster mode, it will depends on the serviceaccount and role/role-binding described in [installation](./installation.md).
 
-## Kubernetes Setup
+## Kubernetes Setup For Gateway API Integration
 
 After you have a K8s cluster, we need to configure it for different CNI types to make sure connection between BIG-IP and kubernetes cluster is OK.
 
 **Note:** 
 
-*We need to configure both sides of BIG-IPs and the Kubernetes cluster.*
+*To enable Gateway API integration via BIG-IP, actually, we need to configure both sides of BIG-IPs and the Kubernetes cluster, however, the BIG-IP side is configured by controller itself automatically when the controller is started.*
 
-*While, The BIG-IP side is configured by controller itself automatically.*
-
-*Here, we only need to configure Kubernetes side manually.*
+*Here, we only need to configure Kubernetes side manually. For different CNIs, we have different configuration steps as following.*
 
 ### In Flannel mode
 
-We need to create a BIG-IP virtual node to connect the BIG-IP node to your Kubernetes cluster flannel network.
+In flannel network mode, we need to create a BIG-IP virtual node to connect the BIG-IP node to the Kubernetes.
 
 Use the following yaml configuration file bigip1.yaml:
 
@@ -48,17 +46,19 @@ podCIDR: "10.42.20.0/24"
 #- "2021:118:2:2::/64"
 ```
 
-The mac address can be obtained using the tmsh command on BIG-IP:
+The mac address can be obtained using the TMSH command on BIG-IP:
 
 `$ show net tunnels tunnel fl-tunnel all-properties`
 
 `$ show net tunnels tunnel fl-tunnel6 all-properties`
 
-Put the above into the bigip1.yaml file and execute the file contents using the `kubectl apply -f bigip1.yaml` command.
+Execute `kubectl apply -f bigip1.yaml` command to create the above virtual node.
 
 ### In Calico mode
 
-On Kubernetes master node, run the command to get `calicoctl` command line:
+In calico mode, we need to peer BIG-IP(s) as the BGP neighbors of Kubernetes nodes. 
+
+So, on master node, run the command to get `calicoctl` command line:
 
 ```shell
 $ curl -O -L https://github.com/projectcalico/calicoctl/releases/download/v3.10.0/calicoctl`
@@ -74,7 +74,6 @@ $ vim /etc/calico/calicoctl.cfg
 ```
 
 calicoctl.cfg
-
 ```yaml
 apiVersion: projectcalico.org/v3
 kind: CalicoAPIConfig
@@ -102,7 +101,7 @@ spec:
 EOF
 ```
 
-Run the following command to create BIG-IP peer for your kubernetes cluster.
+Run the following command to create BIG-IP peer for the kubernetes cluster.
 
 **Notes**: *Change the peerIP to actual BIG-IP traffic IP(the selfIP for data traffic).*
 
