@@ -82,18 +82,17 @@ nav:
   - Releases: Release-notes/index.md
   - Getting Started:
     - Prerequisites: quick-start/index.md
-    - Installing guide: quick-start/installation.md
-    - Unstalling guide: quick-start/uninstall.md
+    - Installtion Guide: quick-start/installation.md
+    - Unstalltion Guide: quick-start/uninstall.md
+    - Controller Parameters: Architecture/parameters.md
   - Product Architecture:
     - Overview: Architecture/index.md
-    - Controller parameters: Architecture/parameters.md
-    - GatewayClass and BIG-IP References: Architecture/gatewayclassrefer.md
-    - Gateway Resource Management: Architecture/resources-layout.md
+    - BIG-IP Providers: Architecture/gatewayclassrefer.md
+    - Resource Management: Architecture/resources-layout.md
   - Use Cases:
-    - Simple HTTProute: Use-Cases/simplehttp.md
+    - Traffic Manipulation: Use-Cases/traffic-matches-filters.md
     - Traffic Splitting: Use-Cases/traffic-splitting.md
-    - Advanced HTTProute: Use-Cases/advancedhttp.md
-    - Cross Reference: Use-Cases/crossrefer.md
+    - service\: tea,coffee: Use-Cases/service-definition.md
   - Operations:
     - Common FAQ: Operation-and-troubleshooting/ki.md
     - Troubleshooting: Operation-and-troubleshooting/trubeshooting.md
