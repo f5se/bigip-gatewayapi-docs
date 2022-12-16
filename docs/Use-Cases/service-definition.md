@@ -1,6 +1,10 @@
 
 *The servcie definitions for references only*
 
+Note that:
+
+`tea` servcie is defined as `NodePort` and `coffee` service is `ClusterIP`. Change it as necessary.
+
 ## tea.yaml
 ```yaml
 
@@ -44,7 +48,7 @@ kind: Service
 metadata:
   name: tea
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
   - port: 80
     targetPort: 80

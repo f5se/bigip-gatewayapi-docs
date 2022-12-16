@@ -103,6 +103,12 @@ The meaning of fields are:
       calico:
 ```
 
+Note that, 
+
+* If we don't want to configure BIG-IP in `flannel` mode, just remove/comment the `flannel` parts. It's same to `calico` case.
+
+* Futher, if we don't want to configure BIG-IP at all, remove/comment both of them, the controller will keep the CNI configurations on BIG-IP as user configure them manually in advance.
+
 ## Part 3: bigip-kubernetes-gateway deployment and service
 
 ```yaml
