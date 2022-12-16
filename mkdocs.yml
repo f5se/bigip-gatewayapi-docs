@@ -92,7 +92,7 @@ nav:
   - Use Cases:
     - Traffic Manipulation: Use-Cases/traffic-matches-filters.md
     - Traffic Splitting: Use-Cases/traffic-splitting.md
-    - service\: tea,coffee: Use-Cases/service-definition.md
+    - service tea,coffee: Use-Cases/service-definition.md
   - Operations:
     - Common FAQ: Operation-and-troubleshooting/ki.md
     - Troubleshooting: Operation-and-troubleshooting/trubeshooting.md
