@@ -82,10 +82,10 @@ nav:
   - Releases: Release-notes/index.md
   - Getting Started:
     - Prerequisites: quick-start/index.md
-    - Installtion Guide: quick-start/installation.md
-    - Unstalltion Guide: quick-start/uninstall.md
-    - Controller Parameters: Architecture/parameters.md
-  - Product Architecture:
+    - Installation Guide: quick-start/installation.md
+    - Unstallation Guide: quick-start/uninstall.md
+    - Controller Parameters: quick-start/parameters.md
+  - Architectures:
     - Overview: Architecture/index.md
     - BIG-IP Providers: Architecture/gatewayclassrefer.md
     - Resource Management: Architecture/resources-layout.md

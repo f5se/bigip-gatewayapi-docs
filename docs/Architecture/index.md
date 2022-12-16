@@ -14,17 +14,6 @@ From the above figure, we can see the correspondence between gateway-related res
 
 When using BIG-IP as a provider, the specific form of each gateway resource on BIG-IP is:
 
-<style>
-.center 
-{
-  width: auto;
-  display: table;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
-<div class="center">
-
 | K8S Resources      | BIG-IP Resources |
 | :---: | :---: |
 |`Controller` | BIG-IP Device |
@@ -33,9 +22,6 @@ When using BIG-IP as a provider, the specific form of each gateway resource on B
 |`HTTPRoute`| `iRule`|
 |`Service`|`Pool`|
 |`Deploy`(`pods`)|`Member`|
-
-</div>
-
 
 ## Program Architecture and Workflow Design
 
