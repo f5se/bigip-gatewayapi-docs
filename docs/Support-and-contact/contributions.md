@@ -1,10 +1,8 @@
 # Wecome any contributions
 
-For online docs, kindly please PR to [this repo](https://github.com/f5se/bigip-gatewayapi-docs){:target="_blank"}
+For online docs, kindly please PR to [docs repository](https://github.com/f5se/bigip-gatewayapi-docs){:target="_blank"}
 
-For coding contribution kindly please refer the guide in the [code repo](https://github.com/f5devcentral/bigip-kubernetes-gateway){:target="_blank"}.
-
-
+For coding contribution kindly please refer the guide in the [code repository](https://github.com/f5devcentral/bigip-kubernetes-gateway){:target="_blank"}.
 
 Here are the contributors for now：
 
