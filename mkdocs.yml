@@ -88,7 +88,7 @@ nav:
   - Architectures:
     - Overview: Architecture/index.md
     - BIG-IP Providers: Architecture/gatewayclassrefer.md
-    - Resource Management: Architecture/resources-layout.md
+    - Resource Layout: Architecture/resources-layout.md
   - Use Cases:
     - Traffic Manipulation: Use-Cases/traffic-matches-filters.md
     - Traffic Splitting: Use-Cases/traffic-splitting.md

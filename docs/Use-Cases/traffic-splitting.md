@@ -51,7 +51,7 @@ spec:
 
 In the above `httproute` definition, we see that there are two rules:
 
-* when we access /test1, 90% of the traffic is forwarded to the tea service
-* when we access /test2, 90% of the traffic is forwarded to the coffee service
+* when we access **/test1**, 90% of the traffic is forwarded to the **tea** service
+* when we access **/test2**, 90% of the traffic is forwarded to the **coffee** service
 
-You may change the two ratios, and run 'kubectl apply -f httproute.yaml' again to achieve a change in the traffic ratio.
+You may change the two ratios, and run `kubectl apply -f httproute.yaml` again to achieve a change in the traffic ratio.
