@@ -90,9 +90,14 @@ nav:
     - BIG-IP Providers: Architecture/gatewayclassrefer.md
     - Resource Layout: Architecture/resources-layout.md
   - Use Cases:
-    - Traffic Manipulation: Use-Cases/traffic-matches-filters.md
-    - Traffic Splitting: Use-Cases/traffic-splitting.md
-    - service tea,coffee: Use-Cases/service-definition.md
+    - Simple Gateway: Use-Cases/simple-gateway.md
+    - HTTP Routing: Use-Cases/http-routing.md
+    - HTTP Redirects and Rewrites: Use-Cases/http-redirect-rewrite.md
+    - HTTP Traffic Splitting: Use-Cases/traffic-splitting.md
+    - Cross-Namespace Routing: Use-Cases/multiple-ns.md
+    - TLS: Use-Cases/tls.md
+    - TCP Routing: Use-Cases/tcp.md
+    - gRPC Routing: Use-Cases/grpc-routing.md
   - Operations:
     - Common FAQ: Operation-and-troubleshooting/ki.md
     - Troubleshooting: Operation-and-troubleshooting/trubeshooting.md
