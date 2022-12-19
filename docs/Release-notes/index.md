@@ -5,6 +5,24 @@ The bigip-kubernetes-gateway versions are released on dockerhub as [Docker image
 The code repository is [f5devcentral/bigip-kubernetes-gateway](https://github.com/f5devcentral/bigip-kubernetes-gateway){:target="_blank"}.
 
 
+## Release v0.0.4
+
+### Docker Image:
+
+[f5devcentral/bigip-kubernetes-gateway:v0.0.4-20221219](https://hub.docker.com/r/f5devcentral/bigip-kubernetes-gateway/tags)
+
+### Reference:
+
+https://gateway-api.f5se.io/quick-start/installation/
+
+### Release Notes:
+
+* Improve the automated configuration of the BIG-IP side in flannel and calico modes, see [here](https://github.com/f5devcentral/bigip-kubernetes-gateway/commit/95cafb5decceda6963926e49beb6bf4aa164029f){:target="_blank"}
+* Determine the [parameters ](../quick-start/parameters.md) passed in by the user, see [here](https://github.com/f5devcentral/bigip-kubernetes-gateway/commit/fe12db6fdabd1e62d5c10103fc0d80e7abb204c9){:target="_blank"}
+* Fixed the partition deletion issue when the gatewayclass was deleted, see [here](https://github.com/f5devcentral/bigip-kubernetes-gateway/commit/0fee4c1ea6f9c9bead45a1e993ff51bf994b83b7){:target="_blank"}
+
+**Full Changelog**: https://github.com/f5devcentral/bigip-kubernetes-gateway/compare/v0.0.3...v0.0.4
+
 ## Release v0.0.3
 
 ### Docker Image: 

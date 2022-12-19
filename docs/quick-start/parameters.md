@@ -133,7 +133,7 @@ spec:
       containers:
         # use `kubectl logs -f deployment/bigip-kubernetes-gateway -c bigip-kubernetes-gateway-pod -n kube-system` for tracing.
         - name: bigip-kubernetes-gateway-pod
-          image: f5devcentral/bigip-kubernetes-gateway:v0.0.4 # > 0.0.4
+          image: f5devcentral/bigip-kubernetes-gateway:v0.0.4-20221219
           imagePullPolicy: IfNotPresent
           command: ["/bigip-kubernetes-gateway-controller-linux"]
           args: [
