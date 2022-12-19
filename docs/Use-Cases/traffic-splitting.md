@@ -1,13 +1,12 @@
-## Traffic Splitting by HTTPRoute Usecase
+## HTTP traffic splitting
 
-In this usecase, we will understand the slightly more complex application method of `httproute`. 
+In this usecase, we will understand the slightly more complex application method of `HTTPRoute`. 
 
-You can implement the grayscale publishing of the application through `httproute`, and smoothly transition traffic to new services.
+You can implement the grayscale publishing of the application through `HTTPRoute`, and smoothly transition traffic to new services.
 
-See [here](./simplehttp.md) for `gatwayclass` and `gateway` definitions.
+See [here](./simple-gateway.md) for `GatwayClass` and `Gateway` definitions.
 
 ```yaml
-
 ---
 
 apiVersion: gateway.networking.k8s.io/v1beta1
@@ -43,7 +42,6 @@ spec:
         - name: tea
           port: 80
           weight: 1
-
 ```
 
 

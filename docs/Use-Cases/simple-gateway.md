@@ -1,10 +1,12 @@
-## Traffic Matches and Filters
+## Deploying a simple Gateway
 
-In this usecase, we will have a preliminary understanding of the definition methods of `httproute` and related resources, and understand how `httproute` achieves the routing and forwarding capability of requests.
+Just like the official website describes [here](https://gateway-api.sigs.k8s.io/guides/simple-gateway/){:target="_blank"}, in this page, we provide another version of a simple gateway deployment.
 
-To demo this simple HTTPRoute usecase, we will create an `httproute` resource that defines traffic forwarding rules, and we need to create the `gatewayclass` and `gateway` resource on which it depends. To demonstrate the effect, we also need to create a `service` resource.
+In this usecase, we will have a preliminary understanding of the definition methods of `HTTPRoute` and related resources, and understand how `HTTPRoute` achieves the routing and forwarding capability of requests.
 
-When we access the ingress IP defined in the `gateway`, the traffic is forwarded to the backend service by the rule defined in httproute.
+To demo this simple HTTPRoute usecase, we will create an `HTTPRoute` resource that defines traffic forwarding rules, and we need to create the `GatewayClass` and `Gateway` resource on which it depends. To demonstrate the effect, we also need to create a `Service` resource.
+
+When we access the ingress IP defined in the `Gateway`, the traffic is forwarded to the backend service by the rule defined in `HTTPRoute`.
 
 gatewayclass.yaml
 ```yaml
