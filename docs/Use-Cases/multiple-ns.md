@@ -1,3 +1,3 @@
 ## Cross-Namespace routing
 
-*Coming soon.*
+*Supported from bigip-kubernetes-gateway v0.0.5.*
