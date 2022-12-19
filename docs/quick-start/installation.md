@@ -1,6 +1,6 @@
 # Installation
 
-In the code [repository](https://github.com/f5devcentral/bigip-kubernetes-gateway/tree/master/deploy){:target="_blank"}, we provide the Gateway API deployment yaml files for installtion.
+In the code [repository](https://github.com/f5devcentral/bigip-kubernetes-gateway/tree/master/deploy){:target="_blank"}, we provide the Gateway API deployment yaml files for installation.
 
 The deployment yaml files are located at: https://github.com/f5devcentral/bigip-kubernetes-gateway/tree/master/deploy.
 
