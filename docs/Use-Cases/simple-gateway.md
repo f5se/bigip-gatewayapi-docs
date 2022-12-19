@@ -1,6 +1,6 @@
 ## Deploying a simple Gateway
 
-Just like the official website describes [here](https://gateway-api.sigs.k8s.io/guides/simple-gateway/){:target="_blank"}, in this page, we provide another version of a simple gateway deployment.
+Just like the official website describes [here](https://gateway-api.sigs.k8s.io/guides/simple-gateway/){:target="_blank"}, a `Gateway` can be deployed as an ingress. In this page, we provide another version of a simple gateway deployment.
 
 In this usecase, we will have a preliminary understanding of the definition methods of `HTTPRoute` and related resources, and understand how `HTTPRoute` achieves the routing and forwarding capability of requests.
 
