@@ -56,6 +56,7 @@ data:
             ipMask: 10.42.20.1/16
             tunnelName: fl-tunnel
       calico:
+        kindsOfConfigItems: ""
 
 
 ```
@@ -100,6 +101,7 @@ The meaning of fields are:
 
       # optional, underlay network configuration for calico CNI mode
       calico:
+        kindsOfConfigItems: ""
 ```
 
 Note that, 
