@@ -157,6 +157,6 @@ spec:
             name: bigip-kubernetes-gateway-configmap
 
 ```
-The the above yaml file, let's pay attention to `image`, `args`, `volumeMounts` and `volumes` parts.
+For the yaml file above, let's pay attention to `image`, `args`, `volumeMounts` and `volumes` parts.
 
 For details about the usage of the file, See [installation](../quick-start/installation.md).
