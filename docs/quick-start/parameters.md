@@ -44,7 +44,6 @@ data:
     - management:
         username: admin
         ipAddress: 10.250.15.180
-        Management IP for connection.
         port: 443
       flannel:
         tunnels:
