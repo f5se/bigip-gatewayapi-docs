@@ -112,7 +112,7 @@ kind: BGPPeer
 metadata:
     name: bgppeer-bigip1
 spec:
-  peerIP: 192.2.3.4
+  peerIP: 10.250.17.111
   asNumber: 64512
 EOF
 ```
