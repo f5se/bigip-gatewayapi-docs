@@ -128,8 +128,12 @@ spec:
     - gateway.test.automation
   rules:
     - matches:
-        - method: GET
-        - method: OPTIONS
+      - queryParams:
+          - name: test
+            value: automation
+        path:
+          type: PathPrefix
+          value: /path-test
       backendRefs:
         - name: test-service1
           port: 80
@@ -149,6 +153,6 @@ spec:
 ```
 
 When the request domain name is `gateway.test.automation`, and
-* If the request method is `GET` or `OPTIONS`, the request is forwarded to the `test-service1` service with port 80.
-* If request parameters contain `?test=automation`, **or** the path of the request is `/path-test`, and the request is forwarded to the `test-service2` service, port 80.
+* If the path of the request is `/path-test`, **AND** the request parameters contain `?test=automation`, the request will be forwarded to the `test-service1` service, port 80.
+* If the path of the request is `/path-test`, **OR** the request parameters contain `?test=automation`, *(only one of the 2 conditions)*, the request will be forwarded to the `test-service2` service, port 80.
 * In other cases, it is forwarded to the `test-service3` service, port 80.
