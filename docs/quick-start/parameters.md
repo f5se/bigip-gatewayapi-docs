@@ -56,9 +56,8 @@ data:
             ipMask: 10.42.20.1/16
             tunnelName: fl-tunnel
       calico:
-        kindsOfConfigItems: ""
-
-
+        localAS: &as 64512
+        remoteAS: *as
 ```
 
 Within the above configmap, it stores BIG-IP configuration for network setup and resource managements. 
@@ -101,7 +100,10 @@ The meaning of fields are:
 
       # optional, underlay network configuration for calico CNI mode
       calico:
-        kindsOfConfigItems: ""
+        # AS num on BIG-IP side
+        localAS: &as 64512
+        # AS num on K8S side, generally, it's same as localAS
+        remoteAS: *as
 ```
 
 Note that, 
