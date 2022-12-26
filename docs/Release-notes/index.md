@@ -6,10 +6,20 @@ The code repository is [f5devcentral/bigip-kubernetes-gateway](https://github.co
 
 ## Release v0.1.0
 
-### DevOps and Monitoring Support
+### Docker Image:
+
+[f5devcentral/bigip-kubernetes-gateway:v0.1.0-20221226](https://hub.docker.com/r/f5devcentral/bigip-kubernetes-gateway/tags)
+
+### Reference:
+
+https://gateway-api.f5se.io/quick-start/installation/
+
+### Release Notes:
+
+#### DevOps and Monitoring Support
 * Supports full DevOps capabilities, providing all [YAML files](https://github.com/f5devcentral/bigip-kubernetes-gateway/tree/v0.1.0/deploy){:target="_blank"} for installation and deployment.
 * Uses github action for the [integration with Slack](https://github.com/f5devcentral/bigip-kubernetes-gateway/blob/v0.1.0/.github/workflows/release-slack-notice.yml){:target="_blank"}.
-### Feature Support
+#### Feature Support
 * Supports using configmap as the [controller's parameter](https://github.com/f5devcentral/bigip-kubernetes-gateway/blob/v0.1.0/deploy/3.deploy-bigip-kubernetes-gateway-controller.yaml#L15){:target="_blank"} format
 * Supports the ability to deliver and configure resources to BIG-IP, refer to [gateway api compatibility](https://github.com/f5devcentral/bigip-kubernetes-gateway/blob/v0.1.0/docs/gateway-api-compatibility.md){:target="_blank"}, also, refer to [all usecases](https://gateway-api.f5se.io/Use-Cases/simple-gateway/){:target="_blank"}.
 * Supports [integration with Prometheus](https://github.com/f5devcentral/bigip-kubernetes-gateway/blob/v0.1.0/deploy/3.deploy-bigip-kubernetes-gateway-controller.yaml#L103){:target="_blank"} to capture controller performance data.
@@ -17,7 +27,7 @@ The code repository is [f5devcentral/bigip-kubernetes-gateway](https://github.co
 * Supports for CNI flannel and calico networks.
 * Supports log tracing with request id.
 * Supports [automated configuration](https://github.com/f5devcentral/bigip-kubernetes-gateway/blob/v0.1.0/deploy/3.deploy-bigip-kubernetes-gateway-controller.yaml#L20){:target="_blank"} of flannel and calico CNI modes on the BIG-IP side.
-### Documentation Support
+#### Documentation Support
 * Documentation on https://gateway-api.f5se.io/.
 
 ## Release v0.0.4
