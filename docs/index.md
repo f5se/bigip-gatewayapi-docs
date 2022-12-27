@@ -13,7 +13,7 @@ For a list of supported Gateway API resources and features, see the [Gateway API
 
 Source code repository: [https://github.com/f5devcentral/bigip-kubernetes-gateway](https://github.com/f5devcentral/bigip-kubernetes-gateway){:target="_blank"}.
 
-Any questions, kindly Please [Contact us](./Support-and-contact/).
+Welcome join us, you can get help  in the [slack channel #oss-bigip-kubernetes-gateway or Wechat](./Support-and-contact/).
 
 Click [here](/Release-notes/), see the latest release.
 
