@@ -24,9 +24,9 @@ Gateway-related resources will be distributed to the associated partitions with 
 
 It should be noted that:
 
-* In the above figure, there are 2 gateways under `gwc1` and `gwc2` that references the same `HTTPRoute`, in this case, the `HTTPRoute` resource is logically the same resource, but the actual deliveries are **two iRules with the same content, located under gwc1 and gwc2 partitions**.
+* In the above figure, there are 2 gateways under `gwc1` and `gwc3` that references the same `HTTPRoute`, in this case, the `HTTPRoute` resource is logically the same resource, but the actual deliveries are **two iRules with the same content, located under gwc1 and gwc2 partitions**.
 
-* In the figure above, iRules in two partitions `gwc1` and `gwc2` refer to the same service, the **pool converted from this service is unique**. 
+* In the figure above, iRules in two partitions `gwc1` and `gwc3` refer to the same service, the **pool converted from this service is unique**. 
 
 `HTTPRoute` resources do not contain partition information, so only when the associated `Gateway` resource being created can it be determined which partition its corresponding irule should be deployed in, so `HTTPRoute` without any `Gateway` association will not be sent immediately, but will be cached until it is referenced by a virtual.
 
