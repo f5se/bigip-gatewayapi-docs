@@ -85,6 +85,11 @@ nav:
     - Installation Guide: quick-start/installation.md
     - Unstallation Guide: quick-start/uninstall.md
     - Controller Parameters: quick-start/parameters.md
+  - Concepts:
+    - Overview: concepts/index.md
+    - GatewayClass: concepts/gatewayclass.md
+    - Gateway: concepts/gateway.md 
+    - HTTPRoute: concepts/httproute.md
   - Architectures:
     - Overview: Architecture/index.md
     - BIG-IP Providers: Architecture/gatewayclassrefer.md
