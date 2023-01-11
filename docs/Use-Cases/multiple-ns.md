@@ -167,3 +167,5 @@ spec:
 
 When the value of allowedRoutes.namespaces.from is `Selector`, it means this gateway allows routes from those namespaces that satisfy
 the namespace selector. In this example, routes whose namespace has label `newlable=newlable` are allowed to attach to the gateway.
+
+Besides `AllowedRoutes.namespaces.From`, `AllowedRoutes.namespaces.Kinds` determines which kinds of routes can be attached to `Gateway`. For some advanced configuration of `AllowedRoutes`, refer to [here](./allowedroutes.md) for more details.

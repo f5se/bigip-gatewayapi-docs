@@ -1,0 +1,119 @@
+---
+
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: Gateway
+metadata:
+  name: mygateway
+  labels:
+    domain: k8s-gateway
+spec:
+  gatewayClassName: bigip
+  listeners:
+  - name: listenerx
+    port: 80
+    protocol: HTTP
+
+    # 1. no "allowedRoutes" definition
+    # 
+
+    # 2. from all namespaces 
+    # allowedRoutes:
+    #   namespaces:
+    #     from: All
+    
+    # 3. from same namespace
+    # allowedRoutes:
+    #   namespaces:
+    #     from: Same
+
+    # 4. use selector's matchLabels
+    # allowedRoutes:
+    #   namespaces:
+    #     from: Selector
+    #     selector:
+    #       matchLabels:
+    #         resource.zone: allowed-namespaces
+    
+    # 5. use selector's matchExpressions
+    # allowedRoutes:
+    #   namespaces:
+    #     from: Selector
+    #     selector:
+    #       matchExpressions:
+    #         - key: resource.zone
+    #           operator: In
+    #           values:
+    #             - allowed-namespaces
+    
+    # 6. use kinds = []
+    # allowedRoutes:
+    #   kinds: []
+
+    # 7. use kinds with items specified -- no HTTPRoute
+    # allowedRoutes:
+    #   kinds:
+    #     - kind: TLSRoute
+    #     - kind: TCPRoute
+
+    # 8. use kinds with items specified -- has HTTPRoute
+    # allowedRoutes:
+    #   kinds:
+    #     - group: gateway.networking.k8s.io
+    #       kind: HTTPRoute
+    #     - kind: TCPRoute
+    #       # group defaults to "gateway.networking.k8s.io"
+
+    # 9. use kinds with items specified -- group is ingress
+    # allowedRoutes:
+    #   kinds:
+    #     - group: ingress.networking.k8s.io
+    #       kind: HTTPRoute
+  addresses:
+    - value: 10.250.18.119
+
+---
+
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: HTTPRoute
+metadata:
+  name: route1
+spec:
+  parentRefs:
+    - name: mygateway
+      sectionName: listenerx
+  hostnames:
+    - gateway.api
+  rules:
+    - matches:
+      - path:
+          type: PathPrefix
+          value: /path-test
+      backendRefs:
+        - name: test-service
+          port: 80
+
+---
+
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: HTTPRoute
+metadata:
+  name: route2
+  namespace: abcd
+spec:
+  parentRefs:
+    - namespace: default
+      name: mygateway
+      sectionName: listenerx
+  hostnames:
+    - gateway.api
+  rules:
+    - matches:
+      - path:
+          type: PathPrefix
+          value: /path-dev
+      backendRefs:
+        - namespace: default
+          name: dev-service
+          port: 80
+
+
