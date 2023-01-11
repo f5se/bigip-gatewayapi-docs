@@ -4,6 +4,29 @@ The bigip-kubernetes-gateway versions are released on dockerhub as [Docker image
 
 The code repository is [f5devcentral/bigip-kubernetes-gateway](https://github.com/f5devcentral/bigip-kubernetes-gateway){:target="_blank"}.
 
+
+## Release v0.1.1
+
+### Docker Image:
+
+[f5devcentral/bigip-kubernetes-gateway:v0.1.1-20230111](https://hub.docker.com/r/f5devcentral/bigip-kubernetes-gateway/tags)
+
+### Reference:
+
+https://gateway-api.f5se.io/quick-start/installation/
+
+### Release Notes:
+
+#### DevOps and Monitoring Support
+* Refine conroller's [logging](https://github.com/f5devcentral/bigip-kubernetes-gateway/commit/95fd84b9d2216a88da93469e7d8c19a0c0cce01f){:target="_blank"}
+
+#### Feature Support
+* Add Support for Gateway.Listener.AllowedRouted Spec. See more details from the [PR](https://github.com/f5devcentral/bigip-kubernetes-gateway/commit/b4bbffb23b92ca709cbc5de9933e93ef7bc52ecb){:target="_blank"} and the [Usecase](../Use-Cases/multiple-ns.md)
+* Add AS [configuration](../quick-start/parameters.md#part-2-bigip-kubernetes-gateway-configmap) for calico mode. 
+
+#### Documentation Support
+* Update compatibility [docs](https://github.com/f5devcentral/bigip-kubernetes-gateway/blob/v0.1.1/docs/gateway-api-compatibility.md)
+
 ## Release v0.1.0
 
 ### Docker Image:
