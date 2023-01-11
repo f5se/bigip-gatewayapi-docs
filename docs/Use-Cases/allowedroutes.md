@@ -3,9 +3,12 @@
 *Supported from v0.1.1*
 
 > Note: The full deployment yaml files can be found:
-  * [*pre.yaml*](./cross-ns-demo/pre.yaml): the `GatewayClass` "bigip" and the `Namespace` "abcd"
-  * [*api.yaml*](./cross-ns-demo/api.yaml): the `Gateway` "mygateway" and `HTTPRoute`s "route1" and "route2"
-  * [*svc.yaml*](./cross-ns-demo/svc.yaml): the `Service`s "test-service" and "dev-service"
+
+* [*pre.yaml*](./cross-ns-demo/pre.yaml): the `GatewayClass` "bigip" and the `Namespace` "abcd"
+
+* [*api.yaml*](./cross-ns-demo/api.yaml): the `Gateway` "mygateway" and `HTTPRoute`s "route1" and "route2"
+
+* [*svc.yaml*](./cross-ns-demo/svc.yaml): the `Service`s "test-service" and "dev-service"
 
 As the [SIG GatewayAPI](https://gateway-api.sigs.k8s.io/){:target="_blank"} mentioned at the beginning of the [page](https://gateway-api.sigs.k8s.io/guides/multiple-ns/#cross-namespace-route-attachment){:target="_blank"}: 
 
@@ -21,8 +24,7 @@ In this page, we focus on 9 cases of configuration practices of `AllowedRoutes`.
 
 To demonstrate the configurations, we have a `Gateway` named "mygateway", 2 `HTTPRoute`s named "route1" and "route2" and 2 `Service`s named "test-service" and "dev-service". 
 
-<img src=./cross-ns-default-abcd.png width=80% align="center"/>
-
+![image](./cross-ns-default-abcd.png)
 
 "route2" is in a different namespace as shown in the above figure. It can be attached to "mygateway" only when the `AllowedRoutes` in "mygateway" is configured ***right***.
 
