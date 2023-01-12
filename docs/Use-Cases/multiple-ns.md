@@ -13,7 +13,7 @@ metadata:
   name: gateway201
   namespace: namespace1
   labels:
-    domain: k8s-gateway.nginx.org
+    domain: k8s-gateway
 spec:
   gatewayClassName: bigip36
   listeners:
@@ -64,7 +64,7 @@ metadata:
   name: gateway201
   namespace: default
   labels:
-    domain: k8s-gateway.nginx.org
+    domain: k8s-gateway
 spec:
   gatewayClassName: bigip36
   listeners:
@@ -124,7 +124,7 @@ metadata:
   name: gateway201
   namespace: namespace1
   labels:
-    domain: k8s-gateway.nginx.org
+    domain: k8s-gateway
 spec:
   gatewayClassName: bigip36
   listeners:
