@@ -32,17 +32,17 @@ apiVersion: v1
 kind: Node
 metadata:
   name: bigip1
-annotations:
-  # Replace IP with Self-IP for your deployment
-  flannel.alpha.coreos.com/public-ip: "10.250.18.105"
-  # uncomment the following line if using v6 tunnel and modify bigip v6 address
-  # flannel.alpha.coreos.com/public-ipv6: "2021:15::125"
-  # Replace MAC with your BIGIP Flannel VXLAN Tunnel MAC
-  flannel.alpha.coreos.com/backend-data: '{"VtepMAC":"fa:16:3e:d5:28:07"}'
-  # uncomment the following line if using v6 tunnel and modify mac accordingly
-  # flannel.alpha.coreos.com/backend-v6-data: '{"VtepMAC":"fa:16:3e:d5:28:07"}'
-  flannel.alpha.coreos.com/backend-type: "vxlan"
-  flannel.alpha.coreos.com/kube-subnet-manager: "true"
+  annotations:
+    # Replace IP with Self-IP for your deployment
+    flannel.alpha.coreos.com/public-ip: "10.250.18.105"
+    # uncomment the following line if using v6 tunnel and modify bigip v6 address
+    # flannel.alpha.coreos.com/public-ipv6: "2021:15::125"
+    # Replace MAC with your BIGIP Flannel VXLAN Tunnel MAC
+    flannel.alpha.coreos.com/backend-data: '{"VtepMAC":"fa:16:3e:d5:28:07"}'
+    # uncomment the following line if using v6 tunnel and modify mac accordingly
+    # flannel.alpha.coreos.com/backend-v6-data: '{"VtepMAC":"fa:16:3e:d5:28:07"}'
+    flannel.alpha.coreos.com/backend-type: "vxlan"
+    flannel.alpha.coreos.com/kube-subnet-manager: "true"
 spec:
   # Replace Subnet with your BIGIP Flannel Subnet
   podCIDR: "10.42.20.0/24"
