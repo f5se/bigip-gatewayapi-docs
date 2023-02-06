@@ -80,11 +80,11 @@ markdown_extensions:
 nav:
   - Overview: index.md
   - Releases: Release-notes/index.md
-  - Getting Started:
-    - Prerequisites: quick-start/index.md
-    - Installation Guide: quick-start/installation.md
-    - Unstallation Guide: quick-start/uninstall.md
-    - Controller Parameters: quick-start/parameters.md
+  # - Getting Started:
+  #   - Prerequisites: deploy/index.md
+  #   - Installation Guide: deploy/installation.md
+  #   - Unstallation Guide: deploy/uninstall.md
+  #   - Controller Parameters: deploy/parameters.md
   - Concepts:
     - Overview: concepts/index.md
     - GatewayClass: concepts/gatewayclass.md
@@ -94,15 +94,16 @@ nav:
     - Overview: Architecture/index.md
     - BIG-IP Providers: Architecture/gatewayclassrefer.md
     - Resource Layout: Architecture/resources-layout.md
-  - Use Cases:
-    - Simple Gateway: Use-Cases/simple-gateway.md
-    - HTTP Routing: Use-Cases/http-routing.md
-    - HTTP Redirects and Rewrites: Use-Cases/http-redirect-rewrite.md
-    - HTTP Traffic Splitting: Use-Cases/traffic-splitting.md
-    - Cross-Namespace Routing: Use-Cases/multiple-ns.md
-    - TLS: Use-Cases/tls.md
-    - TCP Routing: Use-Cases/tcp.md
-    - gRPC Routing: Use-Cases/grpc-routing.md
+  - Guides:
+    - Getting started: guides/getstarted.md
+    - Simple Gateway: guides/simple-gateway.md
+    - HTTP Routing: guides/http-routing.md
+    - HTTP Redirects and Rewrites: guides/http-redirect-rewrite.md
+    - HTTP Traffic Splitting: guides/traffic-splitting.md
+    - Cross-Namespace Routing: guides/multiple-ns.md
+    - TLS: guides/tls.md
+    - TCP Routing: guides/tcp.md
+    - gRPC Routing: guides/grpc-routing.md
   - Operations:
     - Common FAQ: Operation-and-troubleshooting/ki.md
     - Troubleshooting: Operation-and-troubleshooting/trubeshooting.md

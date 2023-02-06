@@ -1,5 +1,7 @@
 # Installation
 
+*Please find [the prerequirement](./index.md) for controller installation.*
+
 In the code [repository](https://github.com/f5devcentral/bigip-kubernetes-gateway/tree/master/deploy){:target="_blank"}, we provide the Gateway API deployment yaml files for installation.
 
 The deployment yaml files are located at: https://github.com/f5devcentral/bigip-kubernetes-gateway/tree/master/deploy.
@@ -27,3 +29,5 @@ After doing them, the bigip-kubernetes-gateway controller runs as a pod in `kube
 * View the run log via `kubectl logs -f deployment/bigip-kubernetes-gateway -c bigip-kubernetes-gateway-pod -n kube-system`
 
 For configuration defails in mentioned yaml files, see [Controller Parameters](./parameters.md).
+
+For uninstallation, see [Uninstallation](./uninstall.md).

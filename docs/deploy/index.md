@@ -1,4 +1,4 @@
-# Get Started
+# Prerequirement for BIG-IP Kubernetes Gateway Controller
 
 You’ll need a Kubernetes cluster to run against. You can use [KIND](https://sigs.k8s.io/kind){:target="_blank"} to get a local cluster for testing, or run against a remote cluster.
 
