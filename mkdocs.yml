@@ -90,6 +90,8 @@ nav:
     - GatewayClass: concepts/gatewayclass.md
     - Gateway: concepts/gateway.md 
     - HTTPRoute: concepts/httproute.md
+    - RBAC: concepts/rbac.md
+    - Rolespersonas: concepts/rolespersonas.md
   - Architectures:
     - Overview: Architecture/index.md
     - BIG-IP Providers: Architecture/gatewayclassrefer.md
