@@ -4,6 +4,37 @@ The bigip-kubernetes-gateway versions are released on dockerhub as [Docker image
 
 The code repository is [f5devcentral/bigip-kubernetes-gateway](https://github.com/f5devcentral/bigip-kubernetes-gateway){:target="_blank"}.
 
+## Release v0.2.0
+
+### Docker Image:
+
+[f5devcentral/bigip-kubernetes-gateway:v0.2.0-20230216](https://hub.docker.com/r/f5devcentral/bigip-kubernetes-gateway/tags)
+
+### Reference:
+
+https://gateway-api.f5se.io/guides/getstarted
+
+### Release Notes:
+
+#### DevOps and Monitoring Support
+
+* Refine logging with given log level and tracing request id.
+
+#### Feature Support
+
+* Fix startup's bigip password issue ([PR](https://github.com/f5devcentral/bigip-kubernetes-gateway/commit/09ea7c214b738a1beca30eb43be32a2411e17662){:target="_blank"})
+
+* Fix sig.k8s.io/controller-runtime dependency issue([PR](https://github.com/f5devcentral/bigip-kubernetes-gateway/commit/25b1fef46426cd1147bbddcbbbbb46a9d22c8a53){:target="_blank"}).
+
+* Be compatible with sig gateway api v0.6.0 specification.
+
+  * Add support for HTTPRoute.Filter.ResponseHeaderModifier.
+
+  * Add support for ReferenceGrant for service binding restriction.
+
+#### Documentation Support
+
+* Update compatibility document for ReferenceGrant and responseHeaderModifier support.
 
 ## Release v0.1.1
 
