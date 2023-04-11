@@ -4,6 +4,46 @@ The bigip-kubernetes-gateway versions are released on dockerhub as [Docker image
 
 The code repository is [f5devcentral/bigip-kubernetes-gateway](https://github.com/f5devcentral/bigip-kubernetes-gateway){:target="_blank"}.
 
+## Release v0.2.1
+
+### Docker Image:
+
+[f5devcentral/bigip-kubernetes-gateway:v0.2.1-20230411](https://hub.docker.com/r/f5devcentral/bigip-kubernetes-gateway/tags)
+
+### Reference:
+
+https://gateway-api.f5se.io/guides/getstarted
+
+### Release Notes:
+
+#### DevOps and Monitoring Support
+
+* Add support for log levels instead of all "debug" by @zongzw in #26
+* Add runtime dumps abiliity. by @zongzw in #32
+* Enhance devops with adding dumping and trailing support. by @zongzw in #33
+* Separate cni setup logic to standalone tool: f5-tool-setup-cni by @zongzw in #34
+* Change the mod from gitee to github by @zhang-shengping in #38
+* Add system test framework by @zongzw in #40
+* Refine the codes to standard project layout. by @zongzw in #44
+* Basic ginkgo test for tls gateway by @zhang-shengping in #45, #48, #49
+
+#### Feature Support
+
+* Add cross namespace routing support. by @zongzw in #23, #24
+* Implement responseHeaderModifier by @zongzw in #28
+* Add ReferenceGrant support. by @zongzw in #30
+* Use template for irule generation. by @zhang-shengping in #32
+* Add https function for gateway. by @zhang-shengping in #35
+* Use referencegrant for secret cross-reference restriction. by @zongzw in #36
+* Add webhook framework and automation yamls. by @zongzw @zhang-shengping in #37, #41, #42
+* Bugfix: avoid deploying resources of other controllerName. by @zongzw in #43
+
+#### Documentation Support
+
+* Update compatibility docs; add more spec support. by @zongzw in #21
+* Add gateway controller examples by @zongzw in #46
+
+
 ## Release v0.2.0
 
 ### Docker Image:
