@@ -159,7 +159,7 @@ https://gateway-api.f5se.io/deploy/installation/
   * Add gateway api compatibility [reference](https://github.com/f5devcentral/bigip-kubernetes-gateway/blob/master/docs/gateway-api-compatibility.md){:target="_blank"}
   * Add [LICENSE](https://github.com/f5devcentral/bigip-kubernetes-gateway/commit/af0b432c9c634adeb116165bf4e3aedc1555c370){:target="_blank"} declaration
 * Use github action for the [integration](https://github.com/f5devcentral/bigip-kubernetes-gateway/blob/master/.github/workflows/release-slack-notice.yml){:target="_blank"} with Slack.
-* Redesign gatewayclass and controller [relationship](https://gateway-api.f5se.io/Architecture/gatewayclassrefer/){:target="_blank"} that moves BIG-IP configuration to controller level.
+* Redesign gatewayclass and controller [relationship](https://gateway-api.f5se.io/Design/gatewayclassrefer/){:target="_blank"} that moves BIG-IP configuration to controller level.
 * Add controller parameter form of [configmap](https://github.com/f5devcentral/bigip-kubernetes-gateway/commit/cbff23770abed5dec7a6c63eaa98a01f19fce64f){:target="_blank"}.
 * Add BIG-IP configuration ability for flannel and calico CNIs([here](https://github.com/f5devcentral/bigip-kubernetes-gateway/commit/819d938551ec92928596519fe96f5f7025c9042f){:target="_blank"}).
 * Enable [log tracing](https://github.com/f5devcentral/bigip-kubernetes-gateway/commit/226a13f3bf584cab356a4d240471c426c04007ea){:target="_blank"} with request id.
@@ -179,7 +179,7 @@ https://gateway-api.f5se.io/deploy/installation/
 
 ### Release Notes:
 
-* Add support for gatewayclass resources, see [gatewayclass design](../Architecture/#framework-and-workflow-design).
+* Add support for gatewayclass resources, see [gatewayclass design](../Design/#framework-and-workflow-design).
 * Implement the ability of handling disorder events for kinds of resources.
 * Improve the design and usage documentation: https://gateway-api.f5se.io/
 * Optimize the resource synchronization mode at startup time for deployment integrity.

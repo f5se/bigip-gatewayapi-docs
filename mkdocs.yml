@@ -1,4 +1,4 @@
-site_name: BIG-IP k8s Gateway online docs
+site_name: BIG-IP Kubernetes GatewayAPI Controller
 extra_css:
   - stylesheets/extra.css
 
@@ -92,10 +92,10 @@ nav:
     - HTTPRoute: concepts/httproute.md
     - RBAC: concepts/rbac.md
     - Rolespersonas: concepts/rolespersonas.md
-  - Architectures:
-    - Overview: Architecture/index.md
-    - BIG-IP Providers: Architecture/gatewayclassrefer.md
-    - Resource Layout: Architecture/resources-layout.md
+  - Design:
+    - Overview: Design/index.md
+    # - BIG-IP Providers: Design/gatewayclassrefer.md
+    # - Resource Layout: Design/resources-layout.md
   - Guides:
     - Getting started: guides/getstarted.md
     - Simple Gateway: guides/simple-gateway.md
@@ -106,9 +106,9 @@ nav:
     - TLS: guides/tls.md
     - TCP Routing: guides/tcp.md
     - gRPC Routing: guides/grpc-routing.md
-  - Operations:
     - Common FAQ: Operation-and-troubleshooting/ki.md
     - Troubleshooting: Operation-and-troubleshooting/trubeshooting.md
+  # - Operations:
   - Contact Us: 
     - Tech Support: Support-and-contact/index.md
     - Contributions: Support-and-contact/contributions.md
