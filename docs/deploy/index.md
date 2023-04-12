@@ -1,22 +1,23 @@
-# Prerequirement for BIG-IP Kubernetes Gateway Controller
+# Prepare a Kubernetes cluster
 
-You’ll need a Kubernetes cluster to run against. You can use [KIND](https://sigs.k8s.io/kind){:target="_blank"} to get a local cluster for testing, or run against a remote cluster.
+You’ll need a Kubernetes cluster to run the Controller. You can use [KIND](https://sigs.k8s.io/kind){:target="_blank"} to get a local cluster for testing, or run against a remote cluster.
 
-**Note:** bigip-kubernetes-gateway controller will automatically use the current context in your kubeconfig file (i.e. whatever cluster `kubectl cluster-info` shows). If the controller runs in In-Cluster mode, it will depends on the serviceaccount and role/role-binding described in [installation](./installation.md).
+**Note:** The Controller can run 
 
-## Kubernetes Setup For Gateway API Integration
+* As a standalone program with local kubeconfig file(by default: ~/.kube/config), or
+* In In-Cluster mode, then, specified `ServiceAccount` and `ClusterRole/ClusterRoleBinding` are required, see [here](https://github.com/f5devcentral/bigip-kubernetes-gateway/blob/master/deploy/1.clusterrole-and-binding.yaml){:target="_blank"}
 
-After you have a K8s cluster, we need to configure it for different CNI types to make sure connection between BIG-IP and kubernetes cluster is OK.
+## Kubernetes CNI Setup
 
-**Note:** 
+To make BIG-IP as the Gateway for the business traffic, we need to setup both K8S and BIG-IP’s networks for different CNI types. 
 
-*To enable Gateway API integration via BIG-IP, actually, we need to configure both sides of BIG-IPs and the Kubernetes cluster, however, the BIG-IP side is configured by controller itself automatically when the controller is started.*
+The relavent network setup of BIG-IP side is handled by Controller automatically when the controller is started. Here, we only focus on configuring networks of Kubernetes side manually. 
 
-*Here, we only need to configure Kubernetes side manually. For different CNIs, we have different configuration steps as following.*
+For different CNIs, we have different configuration steps as following.
 
-### In Flannel mode
+### Flannel
 
-In flannel network mode, we need to create a BIG-IP virtual node to connect the BIG-IP node to the Kubernetes.
+In flannel network mode, we need to create a BIG-IP virtual node to connect the BIG-IP node as a virtual node of the Kubernetes cluster.
 
 In the following configuration sample, we use:
 
@@ -58,9 +59,7 @@ The mac address `VtepMAC` can be obtained using the TMSH command on BIG-IP:
 
 `$ show net tunnels tunnel fl-tunnel6 all-properties`
 
-The pod CIDR `podCIDR` varies and should not be duplicated with the kubernetes cluster's pod CIDRs, see it by:
-
-`kubectl get node -o yaml | grep podCIDR`
+The pod CIDR `podCIDR` varies and should not be duplicated with the kubernetes cluster's pod CIDRs, see it by: `kubectl get node -o yaml | grep podCIDR`
 
 -> Execute `kubectl apply -f bigip1.yaml` command to create the above virtual node.
 
