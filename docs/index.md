@@ -8,6 +8,8 @@ This is the online docs of F5 BIG-IP kubernetes GatewayAPI Controller.
 
 F5 BIG-IP kubernetes GatewayAPI Controller is an [implementation](https://gateway-api.sigs.k8s.io/implementations/){:target="_blank"} of [K8S Gateway API](https://gateway-api.sigs.k8s.io/){:target="_blank"} at [v0.6.2](https://github.com/kubernetes-sigs/gateway-api/releases/tag/v0.6.2){:target="_blank"}. 
 
+As F5 has two traffic management system, one is the BIG-IP, the other one is the Next-Generation BIG-IP Software. So we have 2 integration as well. According to the context, if we emphasize the 'Next', that means it is only for BIG-IP Next, otherwise they are same for BIG-IP or BIG-IP Next.
+
 For a list of supported GatewayAPI resources and features, see the [Gateway API Compatibility](https://github.com/f5devcentral/bigip-kubernetes-gateway/blob/master/docs/gateway-api-compatibility.md){:target="_blank"} doc. Check [here](https://github.com/kubernetes-sigs/gateway-api#status){:target="_blank"} for Gateway API's latest status.
 
 It's open-source and community supported. Source code repository: [https://github.com/f5devcentral/bigip-kubernetes-gateway](https://github.com/f5devcentral/bigip-kubernetes-gateway){:target="_blank"}.

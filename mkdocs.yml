@@ -93,10 +93,11 @@ nav:
     - RBAC: concepts/rbac.md
     - Rolespersonas: concepts/rolespersonas.md
   - Design:
-    - Overview: Design/index.md
+    - BIG-IP Controller Overview: Design/bip.md
+    - BIG-IP Next Controller Overview: Design/bipnext.md
     # - BIG-IP Providers: Design/gatewayclassrefer.md
     # - Resource Layout: Design/resources-layout.md
-  - Guides:
+  - Guides(For BIG-IP):
     - Getting started: guides/getstarted.md
     - Simple Gateway: guides/simple-gateway.md
     - HTTP Routing: guides/http-routing.md
@@ -108,6 +109,10 @@ nav:
     - gRPC Routing: guides/grpc-routing.md
     - Common FAQ: Operation-and-troubleshooting/ki.md
     - Troubleshooting: Operation-and-troubleshooting/trubeshooting.md
+  
+  - Guides(For BIG-IP Next):
+    - Getting started: guides-next/getstarted.md
+
   # - Operations:
   - Contact Us: 
     - Tech Support: Support-and-contact/index.md
